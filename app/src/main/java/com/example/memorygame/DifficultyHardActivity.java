@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.res.Configuration;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +45,20 @@ public class DifficultyHardActivity extends AppCompatActivity {
 
     int player1Points = 0;
     int player2Points = 0;
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Überprüfe die aktuelle Bildschirmausrichtung
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // Landschaftsausrichtung - Führe die erforderlichen Anpassungen durch
+            // ...
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // Porträtausrichtung - Führe die erforderlichen Anpassungen durch
+            // ...
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
