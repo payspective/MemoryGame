@@ -407,8 +407,8 @@ public class DifficultyHardActivity extends AppCompatActivity {
 
                     //game finished??
                     counter++;
-                    if (counter == 16) {
-                        returnButton.setVisibility(View.VISIBLE);
+                    if (counter == 12) {
+                        showWinner();
                     }
 
                     //enable all the tiles
