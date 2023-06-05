@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         marioBlock = findViewById(R.id.marioBlock);
         marioBlock.setImageResource(R.drawable.mario_block);
-        Glide.with(this)
+        Glide.with(marioBlock)
                 .asGif()
                 .load(R.drawable.mario_block)
                 .into(marioBlock);

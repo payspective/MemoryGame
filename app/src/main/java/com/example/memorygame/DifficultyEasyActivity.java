@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.content.res.Configuration;
 
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -150,6 +152,12 @@ public class DifficultyEasyActivity extends AppCompatActivity {
 
         //enable all the tiles
         for (ImageView imageView : tilesList) {
+            imageView.setImageResource(R.drawable.questionmarkblock);
+            Glide.with(imageView)
+                    .asGif()
+                    .load(R.drawable.questionmarkblock)
+                    .into(imageView);
+
             imageView.setEnabled(true);
         }
 
@@ -275,10 +283,12 @@ public class DifficultyEasyActivity extends AppCompatActivity {
             click1Value = number +1;
         } else if (clickNumber == 2) {
             image.setImageResource(imageList.get(number));
-            clickNumber = 1;
-            click2Value = number +1;
+            click2Value = number + 1;
+            if (click1Value != click2Value) {
+                clickNumber = 1;
+                compareTiles();
+            }
 
-            compareTiles();
         }
     }
 
@@ -340,8 +350,20 @@ public class DifficultyEasyActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     //flip tiles
-                    tilesList.get(click1Value-1).setImageResource(R.drawable.questionmark);
-                    tilesList.get(click2Value-1).setImageResource(R.drawable.questionmark);
+
+                    //tilesList.get(click1Value-1) = findViewById(R.id.marioBlock);
+                    tilesList.get(click1Value-1).setImageResource(R.drawable.questionmarkblock);
+                    Glide.with(tilesList.get(click1Value-1))
+                            .asGif()
+                            .load(R.drawable.questionmarkblock)
+                            .into(tilesList.get(click1Value-1));
+
+                    tilesList.get(click2Value-1).setImageResource(R.drawable.questionmarkblock);
+                    Glide.with(tilesList.get(click2Value-1))
+                            .asGif()
+                            .load(R.drawable.questionmarkblock)
+                            .into(tilesList.get(click2Value-1));
+
 
                     switchPlayer();
 

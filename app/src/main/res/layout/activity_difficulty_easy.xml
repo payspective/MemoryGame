@@ -52,28 +52,28 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image2"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image4"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
         </LinearLayout>
 
         <LinearLayout
@@ -86,28 +86,28 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image6"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image7"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image8"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
         </LinearLayout>
 
         <LinearLayout
@@ -120,28 +120,28 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image10"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image11"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image12"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
         </LinearLayout>
 
         <LinearLayout
@@ -154,28 +154,28 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image14"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image15"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
             <ImageView
                 android:id="@+id/image16"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/questionmark"/>
+                android:src="@drawable/questionmarkblock"/>
 
         </LinearLayout>
 
