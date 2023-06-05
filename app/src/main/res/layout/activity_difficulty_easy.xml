@@ -176,6 +176,7 @@
                 android:layout_height="70dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/questionmark"/>
+
         </LinearLayout>
 
     </LinearLayout>
