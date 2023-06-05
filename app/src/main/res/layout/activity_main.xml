@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/mariowallpaper"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,22 +21,23 @@
         android:id="@+id/btnEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:onClick="startEasyActivity"
         android:text="Easy"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnHard"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="200dp"
-        android:onClick="startEasyActivity" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="260dp"
+        android:onClick="startHardActivity"
         android:text="Hard"
-        app:layout_constraintTop_toBottomOf="@id/btnEasy"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        android:onClick="startHardActivity" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

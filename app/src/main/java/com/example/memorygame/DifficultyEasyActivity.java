@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.res.Configuration;
 
-
+import android.media.MediaPlayer;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -60,12 +60,22 @@ public class DifficultyEasyActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty_easy);
 
         returnButton = findViewById(R.id.returnButton);
+
+
+        MediaPlayer backgroundSound = MediaPlayer.create(this, R.raw.mariosounds);
+        backgroundSound.start();
+        /*buttonSound.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });*/
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -315,7 +325,8 @@ public class DifficultyEasyActivity extends AppCompatActivity {
         }
         if (imageList.get(click1Value-1).equals(imageList.get(click2Value-1))) {
             //same images
-
+            MediaPlayer matchCoinSound = MediaPlayer.create(this, R.raw.coin);
+            matchCoinSound.start();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -381,6 +392,9 @@ public class DifficultyEasyActivity extends AppCompatActivity {
         for (ImageView imageView : tilesList) {
             imageView.setEnabled(false);
         }
+
+        MediaPlayer winnerGameSound = MediaPlayer.create(this, R.raw.oneup);
+        winnerGameSound.start();
 
         // Show the winner based on points
         if (player1Points > player2Points) {
