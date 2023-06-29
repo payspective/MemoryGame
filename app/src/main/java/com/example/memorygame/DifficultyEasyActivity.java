@@ -69,7 +69,7 @@ public class DifficultyEasyActivity extends AppCompatActivity {
         returnButton = findViewById(R.id.returnButton);
 
 
-        MediaPlayer backgroundSound = MediaPlayer.create(this, R.raw.mariosounds);
+        MediaPlayer backgroundSound = MediaPlayer.create(this, R.raw.smb_over);
         backgroundSound.start();
         /*buttonSound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

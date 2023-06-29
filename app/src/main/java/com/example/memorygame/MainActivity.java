@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        marioBlock = findViewById(R.id.marioBlock);
+        /*marioBlock = findViewById(R.id.marioBlock);
         marioBlock.setImageResource(R.drawable.mario_block);
         Glide.with(marioBlock)
                 .asGif()
                 .load(R.drawable.mario_block)
-                .into(marioBlock);
+                .into(marioBlock);*/
     }
 
     public void startEasyActivity(View view) {

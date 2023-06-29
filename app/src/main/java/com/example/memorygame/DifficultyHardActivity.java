@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.res.Configuration;
-
+import com.bumptech.glide.Glide;
+import android.media.MediaPlayer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,6 +67,9 @@ public class DifficultyHardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_difficulty_hard);
 
         returnButton = findViewById(R.id.returnButton);
+
+        MediaPlayer backgroundSound = MediaPlayer.create(this, R.raw.smb_over);
+        backgroundSound.start();
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,6 +183,12 @@ public class DifficultyHardActivity extends AppCompatActivity {
 
         //enable all the tiles
         for (ImageView imageView : tilesList) {
+            imageView.setImageResource(R.drawable.questionmarkblock);
+            Glide.with(imageView)
+                    .asGif()
+                    .load(R.drawable.questionmarkblock)
+                    .into(imageView);
+
             imageView.setEnabled(true);
         }
 
@@ -360,10 +370,11 @@ public class DifficultyHardActivity extends AppCompatActivity {
             click1Value = number +1;
         } else if (clickNumber == 2) {
             image.setImageResource(imageList.get(number));
-            clickNumber = 1;
-            click2Value = number +1;
-
-            compareTiles();
+            click2Value = number + 1;
+            if (click1Value != click2Value) {
+                clickNumber = 1;
+                compareTiles();
+            }
         }
     }
 
@@ -388,6 +399,8 @@ public class DifficultyHardActivity extends AppCompatActivity {
             imageView.setEnabled(false);
         }
         if (imageList.get(click1Value-1).equals(imageList.get(click2Value-1))) {
+            MediaPlayer matchCoinSound = MediaPlayer.create(this, R.raw.coin);
+            matchCoinSound.start();
             //same images
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -423,8 +436,18 @@ public class DifficultyHardActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     //flip tiles
-                    tilesList.get(click1Value-1).setImageResource(R.drawable.questionmark);
-                    tilesList.get(click2Value-1).setImageResource(R.drawable.questionmark);
+                    //tilesList.get(click1Value-1) = findViewById(R.id.marioBlock);
+                    tilesList.get(click1Value-1).setImageResource(R.drawable.questionmarkblock);
+                    Glide.with(tilesList.get(click1Value-1))
+                            .asGif()
+                            .load(R.drawable.questionmarkblock)
+                            .into(tilesList.get(click1Value-1));
+
+                    tilesList.get(click2Value-1).setImageResource(R.drawable.questionmarkblock);
+                    Glide.with(tilesList.get(click2Value-1))
+                            .asGif()
+                            .load(R.drawable.questionmarkblock)
+                            .into(tilesList.get(click2Value-1));
 
                     switchPlayer();
 
@@ -442,6 +465,9 @@ public class DifficultyHardActivity extends AppCompatActivity {
         for (ImageView imageView : tilesList) {
             imageView.setEnabled(false);
         }
+
+        MediaPlayer winnerGameSound = MediaPlayer.create(this, R.raw.oneup);
+        winnerGameSound.start();
 
         // Show the winner based on points
         if (player1Points > player2Points) {
