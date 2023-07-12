@@ -74,6 +74,7 @@ public class DifficultyHardActivity extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                backgroundSound.stop();
                 finish(); // Schließt die aktuelle Activity und kehrt zur MainActivity zurück
             }
         });

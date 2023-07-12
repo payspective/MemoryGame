@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
     ImageView marioBlock;
+
+    //Wird aufgerufen, wenn sich die Konfiguration des Geräts ändert (Bildschirmausrichtung)
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -31,13 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*marioBlock = findViewById(R.id.marioBlock);
-        marioBlock.setImageResource(R.drawable.mario_block);
-        Glide.with(marioBlock)
-                .asGif()
-                .load(R.drawable.mario_block)
-                .into(marioBlock);*/
     }
 
     public void startEasyActivity(View view) {

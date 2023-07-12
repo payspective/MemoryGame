@@ -80,6 +80,7 @@ public class DifficultyEasyActivity extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                backgroundSound.stop();
                 finish(); // Schließt die aktuelle Activity und kehrt zur MainActivity zurück
             }
         });
@@ -319,22 +320,24 @@ public class DifficultyEasyActivity extends AppCompatActivity {
 
     private void compareTiles() {
 
-        //disable all the tiles
+        //verhindert, dass zusätzliche tiles beim Vergleich aufgedeckt werden können
         for (ImageView imageView : tilesList) {
             imageView.setEnabled(false);
         }
+
+        //wenn beide tiles übereinstimmen, dann Treffer
         if (imageList.get(click1Value-1).equals(imageList.get(click2Value-1))) {
-            //same images
+            //Sound-Feedback wird abgespielt
             MediaPlayer matchCoinSound = MediaPlayer.create(this, R.raw.coin);
             matchCoinSound.start();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    //remove tiles
+                    //tiles werden vom Spiel entfernt
                     tilesList.get(click1Value-1).setVisibility(View.INVISIBLE);
                     tilesList.get(click2Value-1).setVisibility(View.INVISIBLE);
 
-                    //points
+                    //Treffer wird dem aktuellen Spieler zugeteilt
                     if (currentPlayer == 1) {
                         player1Points++;
                         player1.setText("Player1: "+player1Points);
@@ -349,7 +352,7 @@ public class DifficultyEasyActivity extends AppCompatActivity {
                         showWinner();
                     }
 
-                    //enable all the tiles
+                    //enable all the remaining tiles
                     for (ImageView imageView : tilesList) {
                         imageView.setEnabled(true);
                     }
@@ -362,7 +365,8 @@ public class DifficultyEasyActivity extends AppCompatActivity {
                 public void run() {
                     //flip tiles
 
-                    //tilesList.get(click1Value-1) = findViewById(R.id.marioBlock);
+                    //falls die tiles nicht übereinstimmen, werden die verdeckten tiles(gif) angezeigt
+                    //import com.bumptech.glide.Glide;
                     tilesList.get(click1Value-1).setImageResource(R.drawable.questionmarkblock);
                     Glide.with(tilesList.get(click1Value-1))
                             .asGif()
@@ -375,7 +379,7 @@ public class DifficultyEasyActivity extends AppCompatActivity {
                             .load(R.drawable.questionmarkblock)
                             .into(tilesList.get(click2Value-1));
 
-
+                    //zusätzlich wird noch der aktuelle Spieler gewechselt
                     switchPlayer();
 
                     //enable all the tiles
